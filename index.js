@@ -1,5 +1,7 @@
+require("dotenv").config()
 const express = require("express")
-const cors = require("cors")
+const cors = require("cors")  
+const Note = require("./models/note")
 
 const app = express();
 
@@ -41,7 +43,10 @@ app.get("/", (request, response) => {
 })
 
 app.get("/api/notes", (request, response) => {
-    response.json(notes)
+  Note.find({}).then(result => {
+    response.json(result)
+    mongoose.connection.close()
+})
 })
 
 app.get("/api/notes/:id", (request, response) => {
@@ -95,6 +100,6 @@ const unknownEndpoint = (request, response, next) => {
 
 app.use(unknownEndpoint)
 
-const PORT = process.env.PORT || 3001
+const PORT = process.env.PORT
 app.listen(PORT)
 console.log(`Server running on port ${PORT}`)
