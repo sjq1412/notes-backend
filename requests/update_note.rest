@@ -5,3 +5,13 @@ Content-Type: application/json
     "content": "nkkbs n pl ak",
     "important": false
 }
+
+###
+
+PUT http://localhost:3001/api/notes/64e42f5d21ba45fef18da2ec
+Content-Type: application/json
+
+{
+    "content": "abc",
+    "important": false
+}
