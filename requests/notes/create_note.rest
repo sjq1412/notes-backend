@@ -22,6 +22,7 @@ POST http://localhost:3001/api/notes
 Content-Type: application/json
 
 {
-    "content": "CSS",
-    "important": true
+    "content": "aespa",
+    "important": true,
+    "userId": "64f34973077dbafca649d55f"
 }
