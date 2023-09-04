@@ -20,9 +20,9 @@ Content-Type: application/json
 
 POST http://localhost:3001/api/notes
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNhcmFoIiwiaWQiOiI2NGYzNDk3MzA3N2RiYWZjYTY0OWQ1NWYiLCJpYXQiOjE2OTM4MzI1MTl9.D2wKSArlDUm_bEPcPkUX9CFXQrNOVXOoxLE-uVTEZO0
 
 {
-    "content": "aespa",
-    "important": true,
-    "userId": "64f34973077dbafca649d55f"
+    "content": "annyeong is hello 22",
+    "important": true
 }
