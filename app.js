@@ -6,6 +6,7 @@ const cors = require('cors')
 const loginRouter = require('./controllers/login')
 const notesRouter = require('./controllers/notes')
 const usersRouter = require('./controllers/users')
+const testingRouter = require('./controllers/testing')
 const middleware = require('./utils/middleware')
 const logger = require('./utils/logger')
 const mongoose = require('mongoose')
@@ -33,6 +34,10 @@ app.use(middleware.requestLogger)
 app.get('/', (request, response) => {
   response.send('<h1>hello world!</h1>')
 })
+
+if(process.env.NODE_ENV === 'test') {
+  app.use('/api/testing', testingRouter)
+}
 
 app.use('/api/login', loginRouter)
 app.use('/api/notes', notesRouter)
